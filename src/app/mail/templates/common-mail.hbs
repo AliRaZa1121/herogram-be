@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ app_name }}</title>
+    <meta name="description" content="{{ app_name }}">
+
+    <style type="text/css">
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #1CC0FF;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .content {
+            padding: 30px;
+            color: #555555;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+            font-size: 12px;
+            color: #888888;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <table class="container">
+                    <tr>
+                        <td class="header">
+                            {{ app_name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content">
+                            <p><strong>Hello {{name}},</strong></p>
+                            <p>{{{body}}}</p>
+                            {{#if link}}
+                            <a href="{{ link }}" class="cta-button">{{ linkText }}</a>
+                            {{/if}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="footer">
+                            <p>&copy; {{ app_name }}. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
